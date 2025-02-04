@@ -1,5 +1,5 @@
 name: ocr_nik_extractor
-description: "A new Flutter package project."
+description: "A package to make it easier for users to extract nik data from identity card of the Indonesian people"
 version: 0.0.1
 homepage: https://github.com/altantheprodigy/ocr-nik-extractor.git
 repository: https://github.com/altantheprodigy/ocr-nik-extractor.git

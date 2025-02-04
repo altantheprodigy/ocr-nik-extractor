@@ -11,24 +11,25 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A package to make it easier for users to extract nik data from identity card of the Indonesian people 
 
 ## Features
 
-
+To generate data NIK from image of identity card of the Indonesian people
 
 ## Getting started
 
-
+import 'package:ocr_nik_extractor/ocr_nik_extractor.dart';
 
 ## Usage
 
+Define the function
 
+final OcrNikExtractor ocrNikExtractor = OcrNikExtractor();
 
-```dart
+Call the function to get the data
 
-```
+final String nik = await ocrNikExtractor.extractNik(imageFile: imageFile);
 
 ## Additional information
 
