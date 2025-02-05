@@ -28,6 +28,7 @@ class OcrNikExtractor {
       final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
 
       String nik = _extractNikFromText(recognizedText.text);
+      print("OCR MENTAH = ${recognizedText.text}");
 
       textRecognizer.close();
 

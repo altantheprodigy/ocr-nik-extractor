@@ -1,6 +1,6 @@
 name: ocr_nik_extractor
 description: "A package to make it easier for users to extract nik data from identity card of the Indonesian people"
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/altantheprodigy/ocr-nik-extractor.git
 repository: https://github.com/altantheprodigy/ocr-nik-extractor.git
 
