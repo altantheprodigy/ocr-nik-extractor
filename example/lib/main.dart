@@ -37,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   File? _imageFile;
   String _extractedNik = "Belum ada NIK yang diekstrak";
+  String _extractedName = "Belum ada nama yang diekstrak";
   final OcrNikExtractor _ocrNikExtractor = OcrNikExtractor();
   final ImagePicker _picker = ImagePicker();
 
@@ -49,13 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
       });
 
       try {
-        final nik = await _ocrNikExtractor.extractNik(imageFile: File(imageFile.path));
+        final extractedData = await _ocrNikExtractor.extractData(imageFile: File(imageFile.path));
         setState(() {
-          _extractedNik = nik;
+          _extractedNik = extractedData['nik']!;
+          _extractedName = extractedData['nama']!;
         });
       } catch (e) {
         setState(() {
           _extractedNik = "Gagal mengekstrak NIK: $e";
+          _extractedName = "Gagal mengekstrak NAMA: $e";
         });
       }
     }
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               '*Note: Pastikan NIK KTP terlihat jelas!',
               style: TextStyle(
-                color: Colors.red
+                  color: Colors.red
               ),
             ),
             const Text(
@@ -96,6 +99,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               _extractedNik,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const Text(
+              'Nama yang diekstrak:',
+            ),
+            Text(
+              _extractedName,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
